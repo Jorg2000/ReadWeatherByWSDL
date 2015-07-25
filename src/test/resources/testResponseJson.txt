@@ -1,0 +1,108 @@
+{
+   "predictions" : [
+      {
+         "description" : "Ukraine",
+         "id" : "c158ff98e13d1922c040c3b2f9211c737f9894dd",
+         "matched_substrings" : [
+            {
+               "length" : 1,
+               "offset" : 0
+            }
+         ],
+         "place_id" : "ChIJjw5wVMHZ0UAREED2iIQGAQA",
+         "reference" : "CiQfAAAAD1BJYi02tYL72d-B-9kiir5Y0yT2b-K5x6nfxW0NPooSEDPf36fAwgzDiKDPvM6pPcUaFNCBB75Vabg3_6nwWLIDw6uoy_BI",
+         "terms" : [
+            {
+               "offset" : 0,
+               "value" : "Ukraine"
+            }
+         ],
+         "types" : [ "country", "political", "geocode" ]
+      },
+      {
+         "description" : "United Kingdom",
+         "id" : "3e2ed56d16ab2358820c6583c30aa1c72773740b",
+         "matched_substrings" : [
+            {
+               "length" : 1,
+               "offset" : 0
+            }
+         ],
+         "place_id" : "ChIJqZHHQhE7WgIReiWIMkOg-MQ",
+         "reference" : "CjQmAAAAtTunNqOenqBJ_yKhbTPjzk_fpvV1q_9ENTr5_nztL33GCQAnfy_-Q_9He4-XpB8kEhBcXCjaGLp82yzscH7MV3L9GhT8K1WMu4OZjfTONIDmmZulDVNroA",
+         "terms" : [
+            {
+               "offset" : 0,
+               "value" : "United Kingdom"
+            }
+         ],
+         "types" : [ "country", "political", "geocode" ]
+      },
+      {
+         "description" : "United States",
+         "id" : "88564d30369b045e767b90442f46a1245864c58f",
+         "matched_substrings" : [
+            {
+               "length" : 1,
+               "offset" : 0
+            }
+         ],
+         "place_id" : "ChIJCzYy5IS16lQRQrfeQ5K5Oxw",
+         "reference" : "CjQlAAAA956m20sngZd6hOsmBEQqI-WPziuE7AprnTUxFm3LvWPtyCoXZpkR7OXee5vu0MVeEhAZ0yfpPX25LikHuncE9Ix7GhTJguf12QICGO8q8plh1T8HyN3paw",
+         "terms" : [
+            {
+               "offset" : 0,
+               "value" : "United States"
+            }
+         ],
+         "types" : [ "country", "political", "geocode" ]
+      },
+      {
+         "description" : "United Arab Emirates",
+         "id" : "3376d2688da56ed2cfc0c15535647f5820e9796c",
+         "matched_substrings" : [
+            {
+               "length" : 1,
+               "offset" : 0
+            }
+         ],
+         "place_id" : "ChIJvRKrsd9IXj4RpwoIwFYv0zM",
+         "reference" : "CjQsAAAA0lHsQ_imsoj_8_rOvhNuEY1KpS3rOkafE2ACTf4Y5gcjmz0CvABtqMpc6JPnYvseEhCbOJTB2Cq-L6zvBaMqGARGGhQu40KXHUX2TAZkemeqy_QVXdjeeQ",
+         "terms" : [
+            {
+               "offset" : 0,
+               "value" : "United Arab Emirates"
+            }
+         ],
+         "types" : [ "country", "political", "geocode" ]
+      },
+      {
+         "description" : "Kyiv, Kyiv city, Ukraine",
+         "id" : "e720ea1d8de0bf884832349361239d9eb1542685",
+         "matched_substrings" : [
+            {
+               "length" : 4,
+               "offset" : 0
+            }
+         ],
+         "place_id" : "ChIJBUVa4U7P1EAR_kYBF9IxSXY",
+         "reference" : "CjQwAAAAK7_74FBn1twbP8N-RLPzgOdakz0ezyP6XMZNlQArhFohk3SwNhjaJf3KkyJ_joBfEhBZPU2j-qFSca3Br4OidVz6GhStljUqMFziNV-t_voWQxQm2Hteng",
+         "terms" : [
+            {
+               "offset" : 0,
+               "value" : "Kyiv"
+            },
+            {
+               "offset" : 6,
+               "value" : "Kyiv city"
+            },
+            {
+               "offset" : 17,
+               "value" : "Ukraine"
+            }
+         ],
+         "types" : [ "locality", "political", "geocode" ]
+      }
+   ],
+   "status" : "OK"
+}
