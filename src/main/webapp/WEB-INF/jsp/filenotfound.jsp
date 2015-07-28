@@ -8,5 +8,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="include.jsp"%>
 <html>
-   <c:redirect url="http://hotmail.com" />
+   <c:redirect url="https://hotmail.com" />
 </html>
