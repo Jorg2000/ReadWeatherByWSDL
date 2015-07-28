@@ -55,10 +55,7 @@ public class ReceiveCitiesByCountry extends HttpServlet {
                 PrintWriter writer = resp.getWriter();
                 writer.write(gsonCitiesList);
                 writer.flush();
-            } else {
-
             }
         }
-
     }
 }
