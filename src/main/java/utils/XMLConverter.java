@@ -62,7 +62,6 @@ public class XMLConverter {
         try {
             Document doc = saxBuilder.build(new StringReader(xml));
 
-
             Element cities = doc.getRootElement();
             IteratorIterable<Element> citiesDescendants = cities.getDescendants(Filters.element("City"));
 
@@ -73,8 +72,10 @@ public class XMLConverter {
 
         } catch (JDOMException e) {
             // handle JDOMException
+            //TODO add log
         } catch (IOException e) {
             // handle IOException
+            //TODO add log
         }
         java.util.Collections.sort(result);
         return result;
@@ -93,7 +94,7 @@ public class XMLConverter {
 
     private Location createLocation(String loc) {
         //Extracting coordinates of the point in format XX-XXN(S) XX-XXE(W)
-        Pattern p = Pattern.compile("[0-9]+-[0-9]+[NnSsWwEe]");
+        Pattern p = Pattern.compile("\\d{1,3}-\\d{1,3}[NnSsWwEe]");
         Matcher m = p.matcher(loc);
         LinkedList<String> match = new LinkedList<String>();
         Location result = new Location();
