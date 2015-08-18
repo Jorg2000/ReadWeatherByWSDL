@@ -10,6 +10,8 @@ $(document).ready(function() {
 
 //Call for country prediction servlet on the backend
 $("#country").autocomplete({
+
+    select: function(eventObject){countryEventHandler()},
     source: function(request, response) {
         $.ajax({
             url: "/countrypredictor",
@@ -26,53 +28,22 @@ $("#country").autocomplete({
         });
     },
     minLength: 1
+
 });
 
 
 //Calling for servlet that sends list of the available cities for chosen country
-$("#country").keydown(function(eventObject) {
+$("#country").keydown(function(eventObject){
     if (eventObject.which == 13) {
-        $("#lCity").hide();
-        $("#city").hide();
-        $("#lcityError").hide();
-        $("#cityError").hide();
-        $("#currentWeather").hide();
-        $("#weather").hide();
-        $("#map-canvas").hide();
-        var country = $(this).val();
-        var position = $("#country").position();
-        startLoadingAnimation(position.top + $("#country").height() * 2, position.left);
-        $.ajax({
-            type: "POST",
-            url: "/cities",
-            dataType: 'json',
-            data: {
-                country: country
-            },
-            success: function(data) {
-                var sel = $("#city");
-                sel.empty();
-                if (data.length > 0) {
-                    for (var i = 0; i < data.length; i++) {
-                        sel.append('<option value="' + data[i] + '">' + data[i] + '</option>');
-                    }
-                    $("#lCity").show();
-                    $("#city").show();
-                    stopLoadingAnimation();
-                } else {
-                    $("#lcityError").show();
-                    $("#cityError").show();
-                    stopLoadingAnimation();
-                }
-            }
-        });
+        countryEventHandler();
     }
 });
+
 
 //Calling for servlet that returns weather for chosen country&city
 $("#city").change(function() {
     var country = $("#country").val();
-    var city = $(this).val();
+    var city = $("#city").val();
     var position = $("#city").position();
     startLoadingAnimation(position.top + $("#city").height() * 2, position.left);
     $("#currentWeather").hide();
@@ -149,5 +120,41 @@ function loadMap(lat, lon, name) {
         position: myLatlng,
         map: map,
         title: name
+    });
+}
+function countryEventHandler() {
+    $("#lCity").hide();
+    $("#city").hide();
+    $("#lcityError").hide();
+    $("#cityError").hide();
+    $("#currentWeather").hide();
+    $("#weather").hide();
+    $("#map-canvas").hide();
+    var country = $("#country").val();
+    var position = $("#country").position();
+    startLoadingAnimation(position.top + $("#country").height() * 2, position.left);
+    $.ajax({
+        type: "POST",
+        url: "/cities",
+        dataType: 'json',
+        data: {
+            country: country
+        },
+        success: function (data) {
+            var sel = $("#city");
+            sel.empty();
+            if (data.length > 0) {
+                for (var i = 0; i < data.length; i++) {
+                    sel.append('<option value="' + data[i] + '">' + data[i] + '</option>');
+                }
+                $("#lCity").show();
+                $("#city").show();
+                stopLoadingAnimation();
+            } else {
+                $("#lcityError").show();
+                $("#cityError").show();
+                stopLoadingAnimation();
+            }
+        }
     });
 }

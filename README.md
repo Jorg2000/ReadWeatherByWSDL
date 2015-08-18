@@ -1,7 +1,9 @@
 
-# Check Weather In Your Airport
+# Check Weather In Your Airport  [![Current build status ](https://travis-ci.org/FriendsOfSymfony/FOSRestBundle.svg?branch=master)](https://travis-ci.org/Jorg2000/ReadWeatherByWSDL) 
 ### About
-This small&simple web application shows you weather in different airports around the world. It based on SOAP [GlobalWeatherAPI](http://www.webservicex.net/ws/WSDetails.aspx?CATID=12&WSID=56) from [WebserviceX.NET](http://WebserviceX.NET). It also uses [Google Places API](https://developers.google.com/places/?hl=en) to predict country names in the input fields. 
+
+This small&simple web application shows you weather in different airports around the world. It based on SOAP [GlobalWeatherAPI](http://www.webservicex.net/ws/WSDetails.aspx?CATID=12&WSID=56) from [WebserviceX.NET](http://WebserviceX.NET). It also uses [Google Places API](https://developers.google.com/places/?hl=en) to predict country names in the input fields.
+
 ### Architecture
 This app consists of two parts:
 - Frontend based on HTML+JavaScript+CSS. It gives you ability to enter name of the country and choose one of available airports. All interconnections between frontend page and backend service based on Ajax.    
