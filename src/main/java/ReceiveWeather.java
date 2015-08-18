@@ -26,7 +26,7 @@ public class ReceiveWeather extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        //Initialising Weather API
+        /*Initialising Weather API*/
         globalWeather = new GlobalWeather();
         globalWeatherSoap = globalWeather.getGlobalWeatherSoap();
         gson = new GsonBuilder().setPrettyPrinting().create();
@@ -39,14 +39,14 @@ public class ReceiveWeather extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //Receding weather in XML, converting to JSON and sending to User
+        /*Receding weather in XML, converting to JSON and sending to User*/
         String country = req.getParameter("country").trim();
         String city = req.getParameter("city").trim();
         String XMLWeather = globalWeatherSoap.getWeather(city, country);
 
         Weather weather = new XMLConverter().parseWeather(XMLWeather);
-        //adding status to Weather class. Used
-        // to prevent error with google maps widget on frontend.
+        /*adding status to Weather class. Used
+        to prevent error with google maps widget on frontend.*/
         if (weather.getLocation() == null) {
             weather.setStatus("FAIL");
         } else {

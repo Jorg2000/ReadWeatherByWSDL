@@ -31,7 +31,7 @@ public class ReceiveCitiesByCountry extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        //Initialising Weather api classes
+        /*Initialising Weather api classes*/
         globalWeather = new GlobalWeather();
         globalWeatherSoap = globalWeather.getGlobalWeatherSoap();
         converter = new XMLConverter();
@@ -45,7 +45,7 @@ public class ReceiveCitiesByCountry extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // receiving XML data from WeatherAPI. converting it to JSON and sending to frontend
+        /*receiving XML data from WeatherAPI. converting it to JSON and sending to frontend*/
         String country = req.getParameter("country").trim();
         if (country != null) {
             if (country.length() != 0) {

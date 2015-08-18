@@ -31,7 +31,7 @@ public class GoogleCountryPredictor extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        //Creating instances for GSON and reading APIKey
+        /*Creating instances for GSON and reading APIKey*/
         gson = new GsonBuilder().create();
         Properties properties = new Properties();
         ServletContext servletContext = super.getServletContext();
@@ -46,7 +46,7 @@ public class GoogleCountryPredictor extends HttpServlet {
         apiKey = properties.getProperty("GooglePlacesWebServiceApiKey");
     }
 
-    //
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Response response;
@@ -61,7 +61,7 @@ public class GoogleCountryPredictor extends HttpServlet {
             response = null;
         }
 
-        //Transforming response and sending to frontend
+        /*Transforming response and sending to frontend*/
         ResponseConverter responseConverter = new ResponseConverter(response);
         countriesNames = responseConverter.getCountriesNames();
         String gsonCountriesNames = gson.toJson(countriesNames, List.class);

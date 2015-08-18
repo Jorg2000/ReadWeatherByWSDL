@@ -8,7 +8,7 @@ $(document).ready(function() {
 
 });
 
-//Call for country prediction servlet on the backend
+/*Call for country prediction servlet on the backend*/
 $("#country").autocomplete({
 
     select: function(eventObject){countryEventHandler()},
@@ -32,7 +32,7 @@ $("#country").autocomplete({
 });
 
 
-//Calling for servlet that sends list of the available cities for chosen country
+/*Calling for servlet that sends list of the available cities for chosen country*/
 $("#country").keydown(function(eventObject){
     if (eventObject.which == 13) {
         countryEventHandler();
@@ -40,7 +40,7 @@ $("#country").keydown(function(eventObject){
 });
 
 
-//Calling for servlet that returns weather for chosen country&city
+/*Calling for servlet that returns weather for chosen country&city*/
 $("#city").change(function() {
     var country = $("#country").val();
     var city = $("#city").val();
@@ -90,7 +90,7 @@ $("#city").change(function() {
     });
 });
 
-//Showing animation for user during the waiting
+/*Showing animation for user during the waiting*/
 function startLoadingAnimation(positionY, positionX) {
     var imgObj = $("#loadImg");
     imgObj.show();
@@ -105,7 +105,7 @@ function stopLoadingAnimation() {
     imgObj.hide();
 }
 
-//Loading google maps
+/*Loading google maps*/
 function loadMap(lat, lon, name) {
     var myLatlng = new google.maps.LatLng(lat, lon);
     var mapCanvas = document.getElementById('map-canvas');

@@ -71,11 +71,11 @@ public class XMLConverter {
             }
 
         } catch (JDOMException e) {
-            // handle JDOMException
-            //TODO add log
+           /*  handle JDOMException
+            TODO add log*/
         } catch (IOException e) {
-            // handle IOException
-            //TODO add log
+           /* handle IOException
+            TODO add log*/
         }
         java.util.Collections.sort(result);
         return result;
@@ -93,7 +93,7 @@ public class XMLConverter {
      */
 
     private Location createLocation(String loc) {
-        //Extracting coordinates of the point in format XX-XXN(S) XX-XXE(W)
+        /*Extracting coordinates of the point in format XX-XXN(S) XX-XXE(W)*/
         Pattern p = Pattern.compile("\\d{1,3}-\\d{1,3}[NnSsWwEe]");
         Matcher m = p.matcher(loc);
         LinkedList<String> match = new LinkedList<String>();
@@ -119,7 +119,7 @@ public class XMLConverter {
                 if (m.find()) {
                     place = loc.substring(0, m.start());
                 }
-                //Converting degree from degree-minute-second to decimal degree
+                /*Converting degree from degree-minute-second to decimal degree*/
                 BigDecimal bdLat = new BigDecimal(lat);
                 BigDecimal bdLon = new BigDecimal(lon);
                 BigDecimal bdLatReminder = bdLat.remainder(BigDecimal.ONE).multiply(new BigDecimal(100));
